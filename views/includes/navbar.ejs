@@ -1,0 +1,56 @@
+<style>
+  .btn-search {
+    background-color: #ff5a5f;
+    color: white;
+      
+  }
+
+  .btn-search:hover {
+    background-color: #ff787d;
+    color: white;
+  }
+
+  .navbar-brand:hover {
+    color: #ff5a5f;
+  }
+
+  .nav-link:hover {
+    color: #ff5a5f;
+  }
+</style>
+
+
+<nav class= "navbar navbar-expand-md  bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i> Wanderlust</a>
+    <button class="navbar-toggler"
+     type="button" 
+     data-bs-toggle="collapse"
+     data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>     
+    </div>
+
+    <div class="ms-auto">
+      <form class="d-flex" role="search" action="/listings" method="GET">
+        <input class="form-control me-2 search-input" type="search" name="q" placeholder="Search" aria-label="Search">
+        <button class="btn btn-search" type="submit">Search</button>
+      </form>
+    </div>
+    
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link "href="/listings/new" >Air bnb</a>
+        <% if(!currentUser){ %>
+        <a class="nav-link " href="/signup"><b>Signup</b></a>
+        <a class="nav-link" href="/login"><b>Login</b></a>
+        <% } %> <% if(currentUser) { %>
+        
+        <a class="nav-link "href="/logout" >Logout</a>
+        <% } %>
+    </div>
+  </div>
+</nav>
